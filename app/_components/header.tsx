@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { Point } from "@/_lib/point";
 import {
   ChangeEvent,
   Dispatch,
@@ -9,6 +10,7 @@ import {
 } from "react";
 import { FullScreenHandle } from "react-full-screen";
 
+import CalibrationSettings from '@/_components/calibration-settings';
 import FileInput from "@/_components/file-input";
 import InlineInput from "@/_components/inline-input";
 import InlineSelect from "@/_components/inline-select";
@@ -48,6 +50,9 @@ export default function Header({
   setIsCalibrating,
   height,
   width,
+  points,
+  handleCalibrationSave,
+  handleCalibrationLoad,
   handleHeightChange,
   handleWidthChange,
   handleResetCalibration,
@@ -75,6 +80,9 @@ export default function Header({
   setIsCalibrating: Dispatch<SetStateAction<boolean>>;
   height: string;
   width: string;
+  points: Point[];
+  handleCalibrationSave: (calibrationData: any) => void;
+  handleCalibrationLoad: (calibrationData: any) => void;
   handleHeightChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleWidthChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -171,6 +179,11 @@ export default function Header({
             </Tooltip>
           </div>
           <div className={`flex items-center gap-2 ${visible(isCalibrating)}`}>
+            <CalibrationSettings
+                      points={points}
+                      onCalibrationSave={handleCalibrationSave}
+                      onCalibrationLoad={handleCalibrationLoad}
+            />
             <Tooltip
               description={
                 transformSettings.isFourCorners

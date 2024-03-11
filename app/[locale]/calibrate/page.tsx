@@ -64,6 +64,28 @@ export default function Page() {
   const [pageWidth, setPageWidth] = useState<number>(0);
   const [pageHeight, setPageHeight] = useState<number>(0);
 
+  const handleCalibrationSave = (calibrationData: any) => {
+    // Update the points state with the calibration data
+    const updatedPoints: Point[] = [
+      { x: calibrationData.x1, y: calibrationData.y1 },
+      { x: calibrationData.x2, y: calibrationData.y2 },
+      { x: calibrationData.x3, y: calibrationData.y3 },
+      { x: calibrationData.x4, y: calibrationData.y4 },
+    ];
+    setPoints(updatedPoints);
+  };
+
+  const handleCalibrationLoad = (calibrationData: any) => {
+    // Update the points state with the loaded calibration data
+    const loadedPoints: Point[] = [
+      { x: calibrationData.x1, y: calibrationData.y1 },
+      { x: calibrationData.x2, y: calibrationData.y2 },
+      { x: calibrationData.x3, y: calibrationData.y3 },
+      { x: calibrationData.x4, y: calibrationData.y4 },
+    ];
+    setPoints(loadedPoints);
+  };
+
   function getDefaultPoints() {
     const o = 150;
     const minx = window.innerWidth * 0.2;
@@ -177,14 +199,6 @@ export default function Page() {
     }
   }, []);
 
-  useEffect(() => {
-    if (file) {
-      setGridOn(false);
-    } else {
-      setGridOn(true);
-    }
-  }, [file]);
-
   const pdfTranslation = useProgArrowKeyToMatrix(!isCalibrating);
 
   useEffect(() => {
@@ -251,6 +265,9 @@ export default function Page() {
           setIsCalibrating={setIsCalibrating}
           height={height}
           width={width}
+          points={points}
+          handleCalibrationSave={handleCalibrationSave}
+          handleCalibrationLoad={handleCalibrationLoad}
           handleHeightChange={handleHeightChange}
           handleWidthChange={handleWidthChange}
           handleResetCalibration={() => setPoints(getDefaultPoints())}
