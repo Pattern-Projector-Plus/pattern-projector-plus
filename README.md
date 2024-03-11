@@ -1,8 +1,18 @@
 # Welcome to Pattern Projector Plus!
 
-This is a fork of the original [Pattern Project](https://github.com/Pattern-Projector/pattern-projector) project. The goal of Pattern Projector Plus is to extend the functionality of Pattern Projector using API calls to [Pattern Projector Plus API](https://github.com/Pattern-Projector-Plus/pattern-projector-plus-api). At the moment, the only additional functionality is multiple persistent calibration settings. The next planned features are PDF storage/organization and automatic DXF to PDF conversion.
+This is a fork of the original [Pattern Project](https://github.com/Pattern-Projector/pattern-projector) project.
+The goal of Pattern Projector Plus is to extend the functionality of Pattern Projector using API calls to [Pattern Projector Plus API](https://github.com/Pattern-Projector-Plus/pattern-projector-plus-api).
+At the moment, the only additional functionality is multiple persistent calibration settings.
+The next planned features are PDF storage/organization and automatic DXF to PDF conversion.
 
 Pattern projector plus is a free and open source web app that helps users quickly calibrate projectors for sewing patterns. This project is currently in beta, so expect large changes and new features to be added as we iterate.
+
+## API Setup
+
+Unlike Pattern Project, Pattern Projector Plus requires running a [Pattern Projector Plus API](https://github.com/Pattern-Projector-Plus/pattern-projector-plus-api) server to work.
+You should begin by navigating to the [Pattern Projector Plus API](https://github.com/Pattern-Projector-Plus/pattern-projector-plus-api) repo and setting up a server.
+The URL of the API server that Pattern Projector Plus uses can be configured by creating a .env file in the root directory and setting API_BASE_URL.
+By default, API_BASE_URL is set to http://localhost:5000, which is the default URL that Pattern Projector Plus API uses.
 
 ## What You’ll Need
 
