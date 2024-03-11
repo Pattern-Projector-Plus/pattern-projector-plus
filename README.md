@@ -1,6 +1,8 @@
-# Welcome to Pattern Projector!
+# Welcome to Pattern Projector Plus!
 
-Pattern projector is a free and open source web app that helps users quickly calibrate projectors for sewing patterns. This project is currently in beta, so expect large changes and new features to be added as we iterate.
+This is a fork of the original [Pattern Project](https://github.com/Pattern-Projector/pattern-projector) project. The goal of Pattern Projector Plus is to extend the functionality of Pattern Projector using API calls to [Pattern Projector Plus API](https://github.com/Pattern-Projector-Plus/pattern-projector-plus-api). At the moment, the only additional functionality is multiple persistent calibration settings. The next planned features are PDF storage/organization and automatic DXF to PDF conversion.
+
+Pattern projector plus is a free and open source web app that helps users quickly calibrate projectors for sewing patterns. This project is currently in beta, so expect large changes and new features to be added as we iterate.
 
 ## What You’ll Need
 
